@@ -1,19 +1,19 @@
-<div class="row">
-  <div class="col-sm-offset-2 col-sm-4 text-center">
-    <p>You played <%=@player_move%>!<br>
-      <i class="fa fa-hand-<%=@player_move%>-o" aria-hidden="true"></i>
+<div class="row margin-above-top-md">
+  <div class="col-sm-offset-1 col-sm-4 text-center well">
+    <p class="<%if @result=='You won!'%>text-success<%elsif @result=='You lost!'%>text-danger<%else%>text-info<%end%>">You played <%=@player_move%>!<br>
+      <i class="fa fa-hand-<%=@player_move%>-o margin-above-top-sm" aria-hidden="true"></i>
     </p>
   </div>
 
-  <div class="col-sm-4 text-center">
-    <p>The computer played <%=@computer_move%>!<br>
-      <i class="fa fa-hand-<%=@computer_move%>-o" aria-hidden="true"></i>
+  <div class="col-sm-offset-2 col-sm-4 text-center well">
+    <p class="<%if @result=='You won!'%>text-danger<%elsif @result=='You lost!'%>text-success<%else%>text-info<%end%>">The computer played <%=@computer_move%>!<br>
+      <i class="fa fa-hand-<%=@computer_move%>-o margin-above-top-sm" aria-hidden="true"></i>
     </p>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-offset-4 col-sm-4 text-center">
-    <p><%=@result%></p>
+<div class="row margin-above-top-sm <%if @result=='You won!'%>text-success<%elsif @result=='You lost!'%>text-danger<%else%>text-info<%end%>">
+  <div class="col-sm-offset-4 col-sm-4 text-center well">
+    <p class="result"><%=@result%></p>
   </div>
 </div>
